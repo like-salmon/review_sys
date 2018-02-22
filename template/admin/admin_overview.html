@@ -1,0 +1,103 @@
+{% extends "admin_panel.html" %}
+
+{% block panel %}
+<script type="text/javascript" src="{{static_url("js/highstock.js")}}"></script>
+    <h3>欢迎访问栢世嘉会员审核系统</h3>
+    <div class="visit">
+        <div class="outwrap">
+            <span>已审核:{{reviewed}}</span><span>待审核:{{pending}}</span>
+            <div class="innerwrap"></div>
+        </div>
+            <div id="rt-visit" width="960px" height="420px">
+
+            </div>
+    </div>
+<script type="text/javascript">
+
+Highcharts.setOptions({
+    global: {
+        useUTC: false
+    }
+});
+
+// Create the chart
+Highcharts.stockChart('rt-visit', {
+    chart: {
+        events: {
+            load: function () {
+                // set up the updating of the chart each second
+                var series = this.series[0];
+                var turl = "ws://www.zjjz999.com/websocket";
+                //var turl = "ws://localhost/websocket";
+                function ws(){
+                    var support = "MozWebSocket" in window;
+                    var ws = support?new MozWebSocket(turl):new WebSocket(turl);
+                    ws.onopen = function(){
+                        ws.send("hello");
+                    };
+                    ws.onmessage = function(evt){
+                        //console.log(evt.data);
+                        var x = (new Date()).getTime(), // current time
+                            y = parseInt(evt.data);
+                        series.addPoint([x, y], true, true);
+                        //ws.send("request");
+                    };
+                }
+                ws();
+                ws.onclose = function(){
+                    console.log("close");
+                    ws();
+
+                }
+            }
+        }
+    },
+
+    rangeSelector: {
+        buttons: [{
+            count: 1,
+            type: 'minute',
+            text: '1M'
+        }, {
+            count: 5,
+            type: 'minute',
+            text: '5M'
+        }, {
+            type: 'all',
+            text: 'All'
+        }],
+        inputEnabled: false,
+        selected: 0
+    },
+
+    title: {
+        text: '网站实时访问数据'
+    },
+
+    exporting: {
+        enabled: false
+    },
+
+    series: [{
+        name: '当前在线人数',
+        data: (function () {
+            // generate an array of random data
+            var data = [],
+                time = (new Date()).getTime(),
+                i;
+
+            for (i = -999; i <= 0; i += 1) {
+                data.push([
+                    //time,
+                    time + i * 1000,
+                    //Math.round(Math.random() * 100)
+					55
+                ]);
+            }
+            return data;
+        }())
+    }]
+});
+</script>
+{% end %}
+

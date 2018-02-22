@@ -1,0 +1,18 @@
+{% include "head.html" %}
+<header>
+    <a href="/"><img src="{{static_url("img/pspme_logo.png")}}"/></a>
+</header>
+<div class="swiper-container">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide"><img src="{{static_url("img/wap/slide01.jpg")}}"/></div>
+        <div class="swiper-slide"><img src="{{static_url("img/wap/slide03.jpg")}}"/></div>
+        <div class="swiper-slide"><img src="{{static_url("img/wap/slide04.jpg")}}"/></div>
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+</div>
+
+{% include "footer.html" %}
+

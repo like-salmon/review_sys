@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="CheckClientAccount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="clientAccount" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckClientAccountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckClientAccountResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckEmail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckEmailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckEmailResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllGeneralAgency">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllGeneralAgencyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllGeneralAgencyResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBanksList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetBanksListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBanksListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCurrencyList2">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCurrencyList2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCurrencyList2Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGroupsList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetGroupsListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetGroupsListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertClient">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="clientAccount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="groupsId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="address" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="idCard" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bankAccount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="currencyId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="inputUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="banksId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bankRemark" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertClientResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertClientResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CheckClientAccountSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckClientAccount" />
+  </wsdl:message>
+  <wsdl:message name="CheckClientAccountSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckClientAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckEmailSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckEmail" />
+  </wsdl:message>
+  <wsdl:message name="CheckEmailSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllGeneralAgencySoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllGeneralAgency" />
+  </wsdl:message>
+  <wsdl:message name="GetAllGeneralAgencySoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllGeneralAgencyResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBanksListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBanksList" />
+  </wsdl:message>
+  <wsdl:message name="GetBanksListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBanksListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrencyList2SoapIn">
+    <wsdl:part name="parameters" element="tns:GetCurrencyList2" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrencyList2SoapOut">
+    <wsdl:part name="parameters" element="tns:GetCurrencyList2Response" />
+  </wsdl:message>
+  <wsdl:message name="GetGroupsListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetGroupsList" />
+  </wsdl:message>
+  <wsdl:message name="GetGroupsListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetGroupsListResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertClientSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertClient" />
+  </wsdl:message>
+  <wsdl:message name="InsertClientSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertClientResponse" />
+  </wsdl:message>
+  <wsdl:portType name="TradeCenterSoap">
+    <wsdl:operation name="CheckClientAccount">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">检查客户是否存在</wsdl:documentation>
+      <wsdl:input message="tns:CheckClientAccountSoapIn" />
+      <wsdl:output message="tns:CheckClientAccountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckEmail">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">检查邮件是否存在</wsdl:documentation>
+      <wsdl:input message="tns:CheckEmailSoapIn" />
+      <wsdl:output message="tns:CheckEmailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllGeneralAgency">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">返回所有总代理的账号和对应的名称</wsdl:documentation>
+      <wsdl:input message="tns:GetAllGeneralAgencySoapIn" />
+      <wsdl:output message="tns:GetAllGeneralAgencySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBanksList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取银行列表</wsdl:documentation>
+      <wsdl:input message="tns:GetBanksListSoapIn" />
+      <wsdl:output message="tns:GetBanksListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrencyList2">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取货币列表</wsdl:documentation>
+      <wsdl:input message="tns:GetCurrencyList2SoapIn" />
+      <wsdl:output message="tns:GetCurrencyList2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupsList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获得用户组信息</wsdl:documentation>
+      <wsdl:input message="tns:GetGroupsListSoapIn" />
+      <wsdl:output message="tns:GetGroupsListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertClient">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">插入新客户</wsdl:documentation>
+      <wsdl:input message="tns:InsertClientSoapIn" />
+      <wsdl:output message="tns:InsertClientSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TradeCenterSoap" type="tns:TradeCenterSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CheckClientAccount">
+      <soap:operation soapAction="http://tempuri.org/CheckClientAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckEmail">
+      <soap:operation soapAction="http://tempuri.org/CheckEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllGeneralAgency">
+      <soap:operation soapAction="http://tempuri.org/GetAllGeneralAgency" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBanksList">
+      <soap:operation soapAction="http://tempuri.org/GetBanksList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrencyList2">
+      <soap:operation soapAction="http://tempuri.org/GetCurrencyList2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupsList">
+      <soap:operation soapAction="http://tempuri.org/GetGroupsList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertClient">
+      <soap:operation soapAction="http://tempuri.org/InsertClient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TradeCenterSoap12" type="tns:TradeCenterSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CheckClientAccount">
+      <soap12:operation soapAction="http://tempuri.org/CheckClientAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckEmail">
+      <soap12:operation soapAction="http://tempuri.org/CheckEmail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllGeneralAgency">
+      <soap12:operation soapAction="http://tempuri.org/GetAllGeneralAgency" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBanksList">
+      <soap12:operation soapAction="http://tempuri.org/GetBanksList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrencyList2">
+      <soap12:operation soapAction="http://tempuri.org/GetCurrencyList2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupsList">
+      <soap12:operation soapAction="http://tempuri.org/GetGroupsList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertClient">
+      <soap12:operation soapAction="http://tempuri.org/InsertClient" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TradeCenter">
+    <wsdl:port name="TradeCenterSoap" binding="tns:TradeCenterSoap">
+      <soap:address location="https://pstrade.pspme.cn/Service/TradeCenter.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TradeCenterSoap12" binding="tns:TradeCenterSoap12">
+      <soap12:address location="https://pstrade.pspme.cn/Service/TradeCenter.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

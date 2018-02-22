@@ -1,0 +1,108 @@
+{% include "head.html" %}
+<body>
+{% include "nav.html"%}
+<div class="content afacount">
+    <h2>感谢您提交开户信息</h2>
+    <form method="post" id="aform" action="/apply/" enctype="multipart/form-data">
+        {% raw xsrf_form_html() %}
+        <div class="frow">
+        <label><span class="em">*</span>账户名:</label><input type="text" maxlength="16" pattern="\w{8,16}" placeholder="请输入8-16位账户名,数字和字母" name="account" class="finput" required/>
+        <div class="tips atips"><i></i><p></p></div>
+            </div>
+        <div class="frow">
+        <label><span class="em">*</span>常用邮箱:</label><input type="text" placeholder="请输入邮箱" name="email" pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])+" class="finput" required/>
+        <div class="tips etips"><i></i><p></p></div>
+        </div>
+        <div class="frow">
+        <label><span class="em">*</span>客户姓名:</label><input type="text" placeholder="请输入真实姓名" name="name" minlength="2" maxlength="20" pattern="^[\u4e00-\u9fa5]{2,4}" class="finput" required/>
+        <div class="tips ntips"><i></i><p></p></div>
+        </div>
+        <div class="frow">
+        <label><span class="em">*</span>推荐人编号:</label><input placeholder="请输入以118开头的10位数字" maxlength="10" pattern="^118[\d]{7}" type="text" name="rcode" class="finput" required/>
+        <div class="tips rctips"><i></i><p></p></div>
+        </div>
+        <div class="frow">
+        <label><span class="em">*</span>手机号码:</label><input type="text" placeholder="请输入11位手机号码" name="mobile" maxlength="11" pattern="\d{11}" class="finput" required/>
+        <div class="tips mbtips"><i></i><p></p></div>
+        </div>
+        <div class="frow">
+        <label><span class="em">*</span>地址:</label><input placeholder="请输入至少8个中英文字符" type="text" name="addr" minlength="8" maxlength="50" pattern="^[\u4e00-\u9fa5A-Za-z0-9]{8,}" class="finput" required/>
+        <div class="tips adtips"><i></i><p></p></div>
+        </div>
+        <div class="frow">
+        <label><span class="em">*</span>身份证号:</label><input type="text" name="idcard" class="finput" maxlength="20" pattern="\w{15,18}" required/>
+        <div class="tips adtips"><i></i><p></p></div>
+        </div>
+        <div class="frow">
+        <label><span class="em">*</span>银行账号:</label><input type="text" name="bac" maxlength="25" pattern="\d{12,25}" class="finput" required/>
+        <div class="tips bactips"><i></i><p></p></div>
+        </div>
+        <div class="frow">
+        <label><span class="em">*</span>所属银行:</label>
+        <select id="wbank" name="bkid">
+            {% for i in blist %}
+                {% if i["Id"]==0 %}
+                    <option hid="{{i["Id"]}}"selected>{{i["BankName"]}}</option>
+                    {% else %}
+                    <option hid="{{i["Id"]}}">{{i["BankName"]}}</option>
+                {% end %}
+            {% end %}
+
+
+        </select>
+        <div class="tips wcbtips"><i></i><p></p></div>
+        </div>
+        <div class="frow">
+        <label><span class="em">*</span>分行/支行:</label><input type="text" name="branch" minlength="8" pattern="^[\u4e00-\u9fa5A-Za-z0-9]{4,}" maxlength="50" class="finput" required/>
+        <div class="tips bctips"><i></i><p></p></div>
+        </div>
+        <div class="frow">
+        <label><span class="em">*</span>交易货币:</label>
+            <select id="crtype">
+                <option>RMB</option>
+            </select>
+            <input type="hidden" name="excur" value="8-rmb"/>
+            <div class="tips curtips"><i></i><p style="color:#0d90e0;">目前仅支持人民币</p></div>
+        </div>
+        <div class="frow">
+        <label><span class="em">*</span>身份证正面照:</label><input type="file" accept="image/*" name="idcfimg" class="finput" required/>
+        <div class="tips idfimgtips"><i></i><p></p></div>
+        </div>
+        <div class="frow">
+        <label><span class="em">*</span>身份证背面照:</label><input type="file" accept="image/*" name="idcrimg" class="finput" required/>
+        <div class="tips idrimgtips"><i></i><p></p></div>
+        </div>
+        <div class="frow">
+        <label><span class="em">*</span>银行卡正面照:</label><input type="file" accept="image/*" name="bankimg" class="finput" required/>
+            <div class="tips bkimgtips"><i></i><p></p></div>
+        </div>
+        <div class="frow">
+        <label><span class="em">*</span>指定动作照:</label><input type="file" accept="image/*" name="posimg" class="finput" required/><span id="ps" style="
+    position: absolute;
+    right: 40px;
+    margin-top: 5px;
+    color: #0d90e0;
+    cursor: pointer;
+">点击查看指定动作照</span>
+        <div class="tips pmtips"><i></i><p style="color:#0d90e0;">请左持本人身份证放下巴正下方拍照</p></div>
+        </div>
+        <div class="frow">
+        <label><span class="em">*</span>验证码:</label><input type="text" name="captcha" maxlength="4" pattern="\w{4}" class="finput" required/><div id="captcha"><img src="{{cimg}}"/></div>
+        <div class="tips cctips"><i></i><p></p></div>
+        </div>
+        <p class="warn">
+            您提交的全部信息将会传送至栢世嘉贸易所由专门人员审核，审核通过后会有客服人员通过电话对您进行回访，以核对您是否已经阅读并同意风险告知及服务条款，我们将确保您的个人信息不会用于开户以外的任何其他用途。
+        </p>
+        <div class="frow" style="padding-left: 97px;position: relative;">
+        <input id="ctcbox" type="checkbox"/><span>我已经阅读并同意</span><span style="color:#0d90e0;cursor: pointer;" id="contract">客户协议书</span>
+            <div class="tips ctctips"><i></i><p></p></div>
+        </div>
+        <div class="frow">
+            <input type="submit" id="apsm_btn" value="提交"/>
+        </div>
+
+    </form>
+</div>
+
+{% include "contract.html" %}
+{% include "footer.html" %}

@@ -1,0 +1,18 @@
+{% include "head.html" %}
+{% include "nav.html"%}
+<style>
+        body{background-color: #ffffff;}
+</style>
+<div class="content news" style="min-height:480px;">
+    <h2>{{n[1]}}</h2>
+    <p class="date">{{n[5]}}</p>
+    <hr/>
+    <article>
+        {% raw n[2] %}
+    </article>
+    <span class="source" style="float: right;margin-top: -20px;">来源:凤凰财经</span>
+</div>
+
+{% include "apply_for_account.html" %}
+{% include "footer.html" %}
+

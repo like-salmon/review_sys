@@ -1,0 +1,70 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>中新国金_管理员后台登陆</title>
+    <meta name="application-name" content="中新国金"/>
+    <meta name="renderer" content="webkit"><!-- 强制360使用极速模式 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link rel="shortcut icon" href="{{static_url("img/favicon.ico")}}" type="image/x-icon"/>
+    <link rel="icon" href="{{static_url("img/favicon.ico")}}" type="image/x-icon"/>
+    <link rel="stylesheet" href="{{static_url("css/admin/admin.css")}}"/>
+    <link rel="stylesheet" href="{{static_url("css/public.css")}}"/>
+</head>
+<style>
+      body{
+          background: url("/static/img/design/ambg.jpg");
+          background-attachment: fixed;
+      }
+</style>
+<body>
+<div class="content adminlg">
+    <form id="adlgform" method="post">
+        {% raw xsrf_form_html() %}
+        <div class="frow">
+            <label>用户名:</label>
+            <input type="text" placeholder="请输入8-16位用户名" name="amname" maxlength="20" class="finput" required/>
+            <div class="tips amntips"><i></i><p></p></div>
+        </div>
+        <div class="frow">
+            <label>密码:</label>
+            <input type="password" placeholder="请输入6-16位用户密码" name="ampwd" maxlength="16" class="finput" pattern="[a-zA-Z0-9@\-]{6,16}"  required/>
+            <div class="tips ampwdtips"><i></i><p></p></div>
+        </div>
+        <div class="frow" style="position: relative;">
+            <label>验证码:</label>
+            <input type="text" placeholder="请输入验证码" maxlength="4" name="captcha" pattern="[a-zA-Z0-9]{4}" class="finput" required/>
+            <div class="ccha">
+                <img src="{{acc}}"/>
+            </div>
+            <div class="tips cctips" style="margin-top: 34px;margin-left: 190px;"><i></i><p></p></div>
+        </div>
+        <div class="frow">
+            <input type="submit" value="登陆" class="lgbtn" style="background-color:#ccc;color:#fff;" disabled="disabled"/>
+        </div>
+        <div class="regtip"><p>还没有账号?请先<a href="/adminreg/">注册</a></p></div>
+    </form>
+</div>
+
+<script type="text/javascript" src="{{ static_url("js/jquery-1.9.1.min.js") }}"></script>
+<script type="text/javascript" src="{{static_url("js/admin.review.js")}}"></script>
+<script type="text/javascript">
+    var settings = {
+                "selector": "#adlgform input[name=captcha]",
+                "tips": "#adlgform .tips.cctips",
+                "button": "#adlgform .lgbtn",
+                "regexp": /\w{4}/,
+                "cburl": "/checkcaptcha/",//callback url
+                "callback": $.ajaxGet,//callback function
+                "cbkey": "cc",//key name in callback obj
+                "ngtext": "请输入图中验证码",//when input is empty
+                "crtext": "验证码正确",//condition is met
+                "extext": "验证码出错",//text shows when already exists
+                "rqtext":"请输入图片验证码"
+    };
+    $.validateField(settings);
+</script>
+</body>
+</html>

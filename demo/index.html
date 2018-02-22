@@ -1,0 +1,294 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>demo</title>
+
+<script src="./js/jquery1.42.min.js" type="text/javascript"></script>
+
+<link href="./css/general.css" rel="stylesheet" type="text/css" />
+
+<script src="./js/read_data.js" type="text/javascript"></script>
+
+
+</head>
+<body>
+ <div class="charts_wrap mt10">
+		<h2>	
+<ul>
+<li><a class="on"><img src="./images/icon_chart2.png" class="mr5" style="vertical-align:sub"/>即时报价</a></li>
+<li><a ><img src="./images/icon_chart1.png" class="mr5" style="vertical-align:sub"/>市场指数</a></li>
+
+</ul>	
+		</h2>
+		
+		<div class="charts ">
+			<div class="chart">
+				
+				<table cellspacing="10">
+				<thead>
+						<tr>
+							<th></th><th>买</th><th>卖</th>
+						</tr>
+					</thead>
+				
+					<tbody>
+						<tr>
+								<td>沈贵银</td>
+								
+								<td class="up" id="sgy_up"></td><input type="hidden" id="sgy_up_s" value="0" />
+								<td class="down" id="sgy_down"></td><input type="hidden" id="sgy_down_s" value="0" />
+							</tr>
+							<tr>
+								<td>沈贵钯</td>
+								<td class="up" id="sgp_up"></td><input type="hidden" id="sgp_up_s" value="0" />
+								<td class="down" id="sgp_down"></td><input type="hidden" id="sgp_down_s" value="0" />
+							</tr>
+							<tr>
+								<td>沈贵铂</td>
+								<td class="up" id="sgb_up"></td><input type="hidden" id="sgb_up_s" value="0" />
+								<td class="down" id="sgb_down"></td><input type="hidden" id="sgb_down_s" value="0" />
+							</tr>
+							<tr>
+								<td>沈贵铜</td>
+								<td class="up" id="sgbt_up"></td><input type="hidden" id="sgbt_up_s" value="0" />
+								<td class="down" id="sgbt_down"></td><input type="hidden" id="sgbt_down_s" value="0" />
+							</tr>
+							
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr><tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+					</tbody>
+				</table>
+			</div>
+			
+			<div class="chart">
+		
+				<table cellspacing="10">
+				<thead>
+						<tr>
+							<th></th><th>买</th><th>卖</th>
+						</tr>
+					</thead>
+				
+					<tbody>
+						<tr>
+								<td>伦敦金/美元</td>
+								<td class="up" id="ldjmyn_up"></td><input type="hidden" id="ldjmyn_up_s" value="0" />
+								<td class="down" id="ldjmyn_down"></td><input type="hidden" id="ldjmyn_down_s" value="0" />
+							</tr>
+							<tr>
+								<td>伦敦银/美元</td>
+								<td class="up" id="ldymyn_up"></td><input type="hidden" id="ldymyn_up_s" value="0" />
+								<td class="down" id="ldymyn_down"></td><input type="hidden" id="ldymyn_down_s" value="0" />
+							</tr>
+							<tr>
+								<td>港金/港元</td>
+								<td class="up" id="gjgyn_up"></td><input type="hidden" id="gjgyn_up_s" value="0" />
+								<td class="down" id="gjgyn_down"></td><input type="hidden" id="gjgyn_down_s" value="0" />
+							</tr>
+							<tr>
+								<td>欧元/美元</td>
+								<td class="up" id="olmyn_up"></td><input type="hidden" id="olmyn_up_s" value="0" />
+								<td class="down" id="olmyn_down"></td><input type="hidden" id="olmyn_down_s" value="0" />
+							</tr>
+							<tr>
+								<td>美元/日圆</td>
+								<td class="up" id="myryn_up"></td><input type="hidden" id="myryn_up_s" value="0" />
+								<td class="down" id="myryn_down"></td><input type="hidden" id="myryn_down_s" value="0" />
+							</tr>
+							<tr>
+								<td>英镑/美元</td>
+								<td class="up" id="ybmyn_up"></td><input type="hidden" id="ybmyn_up_s" value="0" />
+								<td class="down" id="ybmyn_down"></td><input type="hidden" id="ybmyn_down_s" value="0" />
+							</tr>
+							<tr>
+								<td>美元/瑞郎</td>
+								<td class="up" id="myrln_up"></td><input type="hidden" id="myrln_up_s" value="0" />
+								<td class="down" id="myrln_down"></td><input type="hidden" id="myrln_down_s" value="0" />
+							</tr>
+							<tr>
+								<td>澳元/美元</td>
+								<td class="up" id="aymyn_up"></td><input type="hidden" id="aymyn_up_s" value="0" />
+								<td class="down" id="aymyn_down"></td><input type="hidden" id="aymyn_down_s" value="0" />
+							</tr>
+							<tr>
+								<td>美元/加元'</td>
+								
+								<td class="up" id="myjyn_up"></td><input type="hidden" id="myjyn_up_s" value="0" />
+								<td class="down" id="myjyn_down"></td><input type="hidden" id="myjyn_down_s" value="0" />
+							</tr>
+					</tbody>
+				</table>
+			</div>
+			
+			<div class="chart">
+				
+				<table cellspacing="10">
+				<thead>
+						<tr>
+							<th></th><th>买</th><th>卖</th>
+						</tr>
+					</thead>
+				
+					<tbody>
+						<tr>
+								<td>欧元/日圆</td>
+								<td class="up" id="oyry_up"></td><input type="hidden" id="oyry_up_s" value="0" />
+								<td class="down" id="oyry_down"></td><input type="hidden" id="oyry_down_s" value="0" />
+							</tr>
+							<tr>
+								<td>欧元/瑞郎</td>
+								<td class="up" id="oyrl_up"></td><input type="hidden" id="oyrl_up_s" value="0" />
+								<td class="down" id="oyrl_down"></td><input type="hidden" id="oyrl_down_s" value="0" />
+							</tr>
+							<tr>
+								<td>欧元/英镑</td>
+								<td class="up" id="oyyb_up"></td><input type="hidden" id="oyyb_up_s" value="0" />
+								<td class="down" id="oyyb_down"></td><input type="hidden" id="oyyb_down_s" value="0" />
+							</tr>
+							<tr>
+								<td>英镑/日圆</td>
+								<td class="up" id="ybry_up"></td><input type="hidden" id="ybry_up_s" value="0" />
+								<td class="down" id="ybry_down"></td><input type="hidden" id="ybry_down_s" value="0" />
+							</tr>
+							<tr>
+								<td>英镑/瑞郎</td>
+								<td class="up" id="ybrl_up"></td><input type="hidden" id="ybrl_up_s" value="0" />
+								<td class="down" id="ybrl_down"></td><input type="hidden" id="ybrl_down_s" value="0" />
+							</tr>
+							<tr>
+								<td>澳元/日圆</td>
+								<td class="up" id="ayry_up"></td><input type="hidden" id="ayry_up_s" value="0" />
+								<td class="down" id="ayry_down"></td><input type="hidden" id="ayry_down_s" value="0" />
+							</tr>
+							<tr>
+								<td>纽元/美元</td>
+								<td class="up" id="nymy_up"></td><input type="hidden" id="nymy_up_s" value="0" />
+								<td class="down" id="nymy_down"></td><input type="hidden" id="nymy_down_s" value="0" />
+							</tr>
+							<tr>
+								<td>澳元/纽元</td>
+								<td class="up" id="ayny_up"></td><input type="hidden" id="ayny_up_s" value="0" />
+								<td class="down" id="ayny_down"></td><input type="hidden" id="ayny_down_s" value="0" />
+							</tr>
+							<tr>
+								<td>美元/人民币</td>
+								<td class="up" id="rmbmy_up"></td><input type="hidden" id="rmbmy_up_s" value="0" />
+								<td class="down" id="rmbmy_down"></td><input type="hidden" id="rmbmy_down_s" value="0" />
+							</tr>
+					</tbody>
+				</table>
+			</div>
+			
+		</div>
+		<div class="charts Hide">
+			<div class="chart" >
+				<div class="title"><img src="./images/day.png"/>日<span><img src="./images/icon_up.png"/></span></div>
+				<table cellspacing="10">
+					<tbody>	
+					<tr>
+						<td>上证指数</td><td id="shagzs_up"></td><input type="hidden" id="shagzs_up_s" value="0" /><td class="down" id="shagzs_down"></td>
+					</tr>
+					<tr>
+						<td>深证成指</td><td id="szzhzs_up"></td><input type="hidden" id="szzhzs_up_s" value="0" /><td class="down" id="szzhzs_down"></td>
+					</tr>
+					<tr>
+						<td>创业板指</td><td id="dgdaxzsx_up"></td><input type="hidden" id="dgdaxzsx_up_s" value="0" /><td class="down" id="dgdaxzsx_down"></td>
+					</tr>
+					<tr>
+						<td>恒生指数</td><td id="hszs_up"></td><input type="hidden" id="hszs_up_s" value="0" /><td class="down" id="hszs_down"></td>
+					</tr>
+					<tr>
+						<td>恒生国企指数</td><td id="hsgqzs_up"></td><input type="hidden" id="hsgqzs_up_s" value="0" /><td class="down" id="hsgqzs_down"></td>
+					</tr>
+					<tr>
+						<td>东京日经指数</td><td id="djrjzs_up"></td><input type="hidden" id="djrjzs_up_s" value="0" /><td class="down" id="djrjzs_down"></td>
+					</tr>
+					<tr>
+						<td>东京日经期货</td><td id="djrjqh_up"></td><input type="hidden" id="djrjqh_up_s" value="0" /><td class="down" id="djrjqh_down"></td>
+					</tr>
+					<tr>
+						<td>台北加权指数</td><td id="dbjqzs_up"></td><input type="hidden" id="dbjqzs_up_s" value="0" /><td class="down" id="dbjqzs_down"></td>
+					</tr>
+					
+				
+				</tbody>
+				</table>
+			</div>
+			<div class="chart">
+				<div class="title"><img src="./images/night.png"/>夜<span><img src="./images/icon_up.png"/></span></div>
+				<table cellspacing="10">
+					<tbody>	
+					<tr>
+								<td>杜琼斯指数</td>
+								<td id="dszs_up"></td><input type="hidden" id="dszs_up_s" value="0" />
+								<td class="up" id="dszs_down"></td>
+							</tr>
+							<tr>
+								<td>德国DAX指数</td>
+								<td id="dgdaxtzs_up"></td>
+								<td class="down" id="dgdaxtzs_down"></td>
+							</tr>
+							<tr>
+								<td>伦敦富时指数</td>
+								<td id="ldfszs_up"></td><input type="hidden" id="ldfszs_up_s" value="0" />
+								<td class="up" id="ldfszs_down"></td>
+							</tr>
+							<tr>
+								<td>美国 AMEX 综合指数</td>
+								<td id="mgamexzs_up"></td><input type="hidden" id="mgamexzs_up_s" value="0" />
+								<td class="down" id="mgamexzs_down"></td>
+							</tr>
+							<tr>
+								<td>标准普尔500指数</td>
+								<td id="bzpszs_up"></td><input type="hidden" id="bzpszs_up_s" value="0" />
+								<td class="up" id="bzpszs_down"></td>
+							</tr>
+							<tr>
+								<td>纳斯达克指数</td>
+								<td id="nsdkzs_up"></td><input type="hidden" id="nsdkzs_up_s" value="0" />
+								<td class="up" id="nsdkzs_down"></td>
+							</tr>
+							<tr>
+								<td>纽约原油</td>
+								<td id="nyyy_up"></td><input type="hidden" id="nyyy_up_s" value="0" />
+								<td class="up" id="nyyy_down"></td>
+							</tr>
+							<tr>
+								<td>美国30年国债</td>
+								<td id="mg30ngz_up"></td><input type="hidden" id="mg30ngz_up_s" value="0" />
+								<td class="up" id="mg30ngz_down"></td>
+							</tr>
+							
+			
+				</tbody>
+				</table>
+			</div>
+			
+		</div>
+			
+	</div>
+                </body>
+                </html>

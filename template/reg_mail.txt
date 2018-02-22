@@ -1,0 +1,10 @@
+﻿<h2 style="text-align:center;"><a href="http://www.zjjz999.com">栢世嘉用户注册</a></h2>
+<p>用户注册id：%s</p>
+<p>用户身份证号:%s</p>
+<p>用户银行卡号:%s</p>
+<p><img src="cid:image1"></p>
+<p><img src="cid:image2"></p>
+<p><img src="cid:image3"></p>
+<p><img src="cid:image4"></p>
+
+

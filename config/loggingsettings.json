@@ -1,0 +1,68 @@
+{
+    "version": 1,
+    "disable_existing_loggers": false,
+    "formatters": {
+        "simple": {
+            "format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+        }
+    },
+ 
+    "handlers": {
+        "console": {
+            "class": "logging.StreamHandler",
+            "level": "DEBUG",
+            "formatter": "simple",
+            "stream": "ext://sys.stdout"
+        },
+ 
+        "info_file_handler": {
+            "class": "logging.handlers.TimedRotatingFileHandler",
+            "level": "INFO",
+            "formatter": "simple",
+			"when":"midnight",
+            "filename": "/www/zhongjinjujin/log/info.log",
+            "backupCount": 20,
+            "encoding": "utf8"
+        },
+ 
+        "error_file_handler": {
+            "class": "logging.handlers.TimedRotatingFileHandler",
+            "level": "ERROR",
+            "formatter": "simple",
+			"when":"midnight",
+            "filename": "/www/zhongjinjujin/log/errors.log",
+            "backupCount": 20,
+            "encoding": "utf8"
+        },
+        "warning_file_handler": {
+            "class": "logging.handlers.TimedRotatingFileHandler",
+            "level": "WARNING",
+            "formatter": "simple",
+			"when":"midnight",
+            "filename": "/www/zhongjinjujin/log/warning.log",
+            "backupCount": 20,
+            "encoding": "utf8"
+        }
+    },
+ 
+    "loggers": {
+        "error_file_handler": {
+            "handlers": ["error_file_handler"],
+            "propagate": false
+        },
+        "info_file_handler":{
+            "handlers": ["info_file_handler"],
+            "propagate": false
+        },
+        "warning_file_handler":{
+            "handlers": ["warning_file_handler"],
+            "propagate": false
+        }
+    },
+ 
+    "root": {
+        "level": "INFO",
+        "handlers": ["console", "info_file_handler", "error_file_handler","warning_file_handler"],
+        "propagate": true
+    }
+}
