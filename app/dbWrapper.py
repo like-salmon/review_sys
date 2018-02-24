@@ -148,7 +148,7 @@ class dbWrapper():
             self.cond = ' where 1 '
 
     def clean(self):
-        """this method is used for cleaning up the clients who send no request to websocket periodically """
+        """this method is used for cleaning up the clients who send no periodical request to websocket """
         ts = datetime.datetime.fromtimestamp(time.time()-10).strftime('%Y-%m-%d %H:%M:%S')#clean
         sql = "update zxgj_visiters set v_ing = 0 where v_ts < '%s' and v_ing = '1'"%ts
         cts = datetime.datetime.fromtimestamp(time.time() - 3600*12).strftime('%Y-%m-%d %H:%M:%S')  # clean yesterday's data
