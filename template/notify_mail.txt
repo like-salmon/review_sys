@@ -1,6 +1,0 @@
-<h2 style="text-align:center;"><a href="http://www.zjjz999.com">栢世嘉用户开户申请</a></h2>
-
-<h4>您收到如下用户的开户申请:</h4>
-<p>用户名称:%s</p>
-<p>用户账号:%s</p>
-<p>请点击<a href="http://zjjz999.com/admin/review/?smem=%s">这里</a>审核该用户信息.</p>
